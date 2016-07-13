@@ -33,7 +33,7 @@
 	        .state('add', {
 	          url: '/add',
 	          templateUrl: 'partials/addSite.html',
-	          controller: 'AddSiteCtrl',
+	          controller: 'AddCtrl',
 	          restricted: true
 	        });
 	        $urlRouterProvider.otherwise('/');

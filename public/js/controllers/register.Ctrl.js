@@ -7,10 +7,13 @@
 
     RegisterCtrl.$inject = ['$scope', '$state', '$alert', 'Auth'];
 
-    function RegisterCtrl($scope, $state, $alert, Auth) {
+    function RegisterCtrl($scope, $state, Auth) {
       $scope.error = false;
 
       $scope.register = function(form) {
+        
+        // referenced in register.html through ng-model
+        // and then passed to Auth.user service
         var user = {
           username: $scope.username,
           password: $scope.password,
@@ -21,20 +24,12 @@
         Auth.register(user)
           .success(function() {
             console.log('User registered successfully ');
-            $state.go('login');
-          $alert({
-            title: 'Congratulations',
-            content: 'Your account has been created. ' + 'You may now login',
-            placement: 'top-right',
-            container: '.alertContainer',
-            type: 'success',
-            duration: 6
+            $state.go('login');          
+          })
+          .error(function() {
+            $scope.error = true;
+            $scope.errorMessage = 'Something went wrong'
           });
-      })
-        .error(function() {
-          $scope.error = true;
-          $scope.errorMessage = 'Something went wrong'
-        });
     }
   }
 
