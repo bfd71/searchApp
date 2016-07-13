@@ -1,0 +1,24 @@
+{
+  "name": "searchengine",
+  "description": "Udemy course \"Projects in NodeJS\" project 4",
+  "main": "server.js",
+  "authors": [
+    "bfd71 <brethen.crowne@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.3.1",
+    "angular-strap": "^2.3.9",
+    "angular-cookies": "^1.5.7"
+  }
+}
