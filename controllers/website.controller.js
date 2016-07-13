@@ -1,4 +1,4 @@
-var website = require("../models/Website.model");
+var Website = require("../models/Website.model");
 
 exports.create = function(req, res) {
 	var newWebsite = new Website();
@@ -6,6 +6,7 @@ exports.create = function(req, res) {
 	newWebsite.title = req.body.title;
 	newWebsite.url = req.body.url;
 	newWebsite.description = req.body.description;
+	newWebsite.submittedBy = req.body.id;
 
 	newWebsite.save(function(err, result) {
 		if(err) {
