@@ -32,7 +32,7 @@ var WebsiteSchema = new Schema({
 WebsiteSchema.plugin(searchPlugin, {
 	// array of properties defined according to schema
 	// plugin will create keywords that will be related to model that we can search for
-	fields: ['title', 'url', 'description'];
+	fields: ['title', 'url', 'description']
 })
 
 module.exports = mongoose.model('Website', WebsiteSchema);
