@@ -23,7 +23,9 @@ exports.searchResults = function(req, res) {
 
 	// taken from mongoose search example
 	Website.search(searchText, {
-		title: 1
+		title: 1,
+		description: 1,
+		url: 1
 	}, {
 		conditions: {
 			title: {
